@@ -34,4 +34,10 @@
   >
     <app-form-array></app-form-array>
   </div>
+  <div
+    class="col-xs-12 col-md-6 mx-auto"
+    *ngIf="selectedComponent === 'dynamicForm'"
+  >
+    <app-dynamic-form [questions]="questions$ | async"></app-dynamic-form>
+  </div>
 </div>

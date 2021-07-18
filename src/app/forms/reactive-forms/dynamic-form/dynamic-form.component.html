@@ -1,0 +1,19 @@
+<div class="py-2">
+  <form (ngSubmit)="onSubmit()" [formGroup]="formGroup">
+    <div *ngFor="let question of questions" class="row py-1">
+      <app-dynamic-form-question
+        [question]="question"
+        [formGroup]="formGroup"
+      ></app-dynamic-form-question>
+    </div>
+    <div class="row mt-1">
+      <button class="btn" type="submit" [disabled]="!formGroup.valid">
+        Save
+      </button>
+    </div>
+  </form>
+
+  <div *ngIf="payLoad" class="row mt-1">
+    <code>{{ payLoad }}</code>
+  </div>
+</div>

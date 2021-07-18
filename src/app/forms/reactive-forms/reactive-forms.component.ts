@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { QuestionBase } from './dynamic-form/question-base';
+import { QuestionService } from '../services/question.service';
 
 @Component({
   selector: 'app-reactive-forms',
@@ -24,9 +27,17 @@ export class ReactiveFormsComponent implements OnInit {
       value: 'formArray',
       label: 'Form Array',
     },
+    {
+      value: 'dynamicForm',
+      label: 'Dynamic Form',
+    },
   ];
 
-  constructor() {}
+  questions$: Observable<QuestionBase<any>[]>;
+
+  constructor(private questionService: QuestionService) {
+    this.questions$ = this.questionService.getQuestions();
+  }
 
   ngOnInit() {}
 }

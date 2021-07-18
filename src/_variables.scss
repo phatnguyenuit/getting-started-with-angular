@@ -1,0 +1,49 @@
+@import 'colors';
+
+$theme-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'success': $success,
+  'info': $info,
+  'warning': $warning,
+  'danger': $danger,
+  'light': $light,
+  'dark': $dark,
+);
+
+$text-variants: map-merge(
+  $theme-colors,
+  (
+    'white': $white,
+    'body': $body-color,
+    'muted': $text-muted,
+    'black-50': rgba($black, 0.5),
+    'white-50': rgba($white, 0.5),
+    'reset': inherit,
+  )
+);
+
+$cols: 12;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+$spacer: 0.5rem;
+
+$properties: (
+  m: 'margin',
+  p: 'padding',
+);
+
+$sides: (
+  t: 'top',
+  b: 'bottom',
+  l: 'left',
+  r: 'right',
+);

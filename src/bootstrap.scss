@@ -1,15 +1,5 @@
 @use "sass:math";
-
-$cols: 12;
-
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px,
-);
+@import 'variables';
 
 .row {
   display: flex;
@@ -48,20 +38,6 @@ $grid-breakpoints: (
     }
   }
 }
-
-$spacer: 0.5rem;
-
-$properties: (
-  m: 'margin',
-  p: 'padding',
-);
-
-$sides: (
-  t: 'top',
-  b: 'bottom',
-  l: 'left',
-  r: 'right',
-);
 
 @each $propertyPrefix, $property in $properties {
   @each $sidePrefix, $side in $sides {
@@ -190,5 +166,11 @@ $sides: (
   &.active {
     font-weight: 700;
     background-color: #f50057;
+  }
+}
+
+@each $text-variant, $color in $text-variants {
+  .text-#{$text-variant} {
+    color: $color !important;
   }
 }
