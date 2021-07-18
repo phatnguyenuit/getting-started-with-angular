@@ -1,0 +1,77 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h3>Form Builder</h3>
+    <div class="form-group" [formGroup]="profileFormGroup">
+      <div class="field-item">
+        <label for="first-name" class="form-label">First Name (*)</label>
+        <input
+          data-testid="first-name"
+          id="first-name"
+          class="form-control"
+          formControlName="firstName"
+        />
+      </div>
+      <div class="field-item mt-1">
+        <label for="last-name" class="form-label">Last Name</label>
+        <input
+          data-testid="last-name"
+          id="last-name"
+          class="form-control"
+          formControlName="lastName"
+        />
+      </div>
+      <!-- Nested form group with formGroupName -->
+      <div class="field-item mt-1" formGroupName="address">
+        <h4>Address</h4>
+        <div class="field-item">
+          <label for="street" class="form-label">Street</label>
+          <input
+            data-testid="street"
+            id="street"
+            class="form-control"
+            formControlName="street"
+          />
+        </div>
+        <div class="field-item mt-1">
+          <label for="city" class="form-label">City</label>
+          <input
+            data-testid="city"
+            id="city"
+            class="form-control"
+            formControlName="city"
+          />
+        </div>
+        <div class="field-item mt-1">
+          <label for="state" class="form-label">State</label>
+          <input
+            data-testid="state"
+            id="state"
+            class="form-control"
+            formControlName="state"
+          />
+        </div>
+        <div class="field-item mt-1">
+          <label for="zipCode" class="form-label">Zip Code</label>
+          <input
+            data-testid="zipCode"
+            id="zipCode"
+            class="form-control"
+            formControlName="zipCode"
+          />
+        </div>
+      </div>
+    </div>
+    <button class="btn mt-2" (click)="updateValues()">
+      Update default values
+    </button>
+  </div>
+</div>
+
+<div class="row mt-2">
+  <code>{{ { formStatus: profileFormGroup.status } | json }}</code>
+</div>
+<div class="row mt-2">
+  <code>
+    {{ profileFormGroup.value | json }}
+  </code>
+</div>

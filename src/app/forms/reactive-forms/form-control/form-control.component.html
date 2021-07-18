@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-xs-12 col-md-5">
+    <h3>Form Control</h3>
+    <label for="favorite-color" class="form-label">Favorite color</label>
+    <input
+      data-testid="favorite-color"
+      id="favorite-color"
+      class="form-control"
+      [formControl]="favoriteColorControl"
+    />
+  </div>
+</div>
+<div class="row mt-1">
+  <button class="btn" (click)="setValue('Blue')">Set value to 'Blue'</button>
+</div>
+<div class="row mt-2">
+  <code>
+    {{ { favoriteColor: favoriteColorControl.value } | json }}
+  </code>
+</div>

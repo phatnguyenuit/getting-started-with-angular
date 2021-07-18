@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "learn-angular": {
+    "getting-started-with-angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/learn-angular",
+            "outputPath": "dist/getting-started-with-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "learn-angular:build:production"
+              "browserTarget": "getting-started-with-angular:build:production"
             },
             "development": {
-              "browserTarget": "learn-angular:build:development"
+              "browserTarget": "getting-started-with-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "learn-angular:build"
+            "browserTarget": "getting-started-with-angular:build"
           }
         },
         "test": {
@@ -103,9 +103,21 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "learn-angular"
+  "defaultProject": "getting-started-with-angular",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }

@@ -1,0 +1,27 @@
+<div class="py-2" [formGroup]="formGroup">
+  <h2>Names</h2>
+  <button class="btn mb-1" (click)="addNewControl()">+ Add another name</button>
+
+  <div
+    class="mt-1"
+    formArrayName="names"
+    *ngFor="let nameControl of names.controls; let i = index"
+  >
+    <!-- The repeated name template -->
+    <label class="form-label" for="name-{{ i }}">Name {{ i + 1 }}:</label>
+    <div class="row row-center row-g-1">
+      <input
+        class="form-control"
+        id="name-{{ i }}"
+        type="text"
+        [formControlName]="i"
+      />
+      <button (click)="removeControl(i)" title="Remove">&times;</button>
+    </div>
+  </div>
+  <div class="mt-2">
+    <code>
+      {{ formGroup.value | json }}
+    </code>
+  </div>
+</div>
