@@ -36,11 +36,7 @@
     },
     {
       "files": ["*.html"],
-      "plugins": ["prettier"],
-      "extends": [
-        "plugin:prettier/recommended",
-        "plugin:@angular-eslint/template/recommended"
-      ],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
       "rules": {}
     }
   ]
